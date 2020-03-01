@@ -7,4 +7,4 @@ class Currency:
     
 
     def __str__(self):
-        return (f' $1.00 USD is equal to  : {self.exchange_rate} {self.denomination}')
+        return (f'$1.00 USD is equal to ${self.exchange_rate:.2F} {self.denomination}.\n')

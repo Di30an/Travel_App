@@ -5,4 +5,4 @@ class Yelp :
         self.city = city
         self.recommendations = recommendations
     def __str__(self):
-        return (f'Here are yelp recommendations for {self.city}{self.recommendations}')
+        return (f'Here are yelp recommendations for {self.city}:\n ----------------------------------------------\n{self.recommendations}')
