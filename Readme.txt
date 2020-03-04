@@ -1,0 +1,2 @@
+A program that lets the user search cities for weather, local exchange rate and yelp resturant recommendations.
+The program then stores their data in a data base with the user_email used as a forgein key. 
