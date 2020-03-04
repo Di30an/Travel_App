@@ -12,9 +12,6 @@ class API:
             print("init")
 
     def add_User_Data (self,User, location, weather,yelp, currency):
-        print(User)
-
-
         insert_sql = "INSERT INTO User_Data (User_Email, Weather_API, Yelp_API, Currency_API, DATE) VALUES (?,?,?,?,?)" 
         date = ""
         with sqlite3.connect(db) as conn:
@@ -62,6 +59,3 @@ class API:
                 print(f"Added{User_Email} ")
                 return True
         conn.close()
-
-api = API
-api.view_User_Data(api,"Has")

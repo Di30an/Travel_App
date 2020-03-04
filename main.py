@@ -10,8 +10,10 @@ from getLocation import *
 
 def main():
     login = user_login_menu()
-    while (login[0]):
-        print (f' \n Welcome {login[1]} . Here are your options : \n'
+    login_name = login[1]
+    login_bool = login[0]
+    while (login_bool):
+        print (f' \n Welcome {login_name} . Here are your options : \n'
             '1 : Search New Location \n'
             '2 : Disply previous searches \n'
             '3 : Exit Program ' )
@@ -19,7 +21,7 @@ def main():
 
         if menuChoice == '1' :
             api = API
-            login = login[1]
+            login = login_name
             location = get_country_and_city()
 
             yelp = str(Yelp_API(location))
@@ -29,13 +31,13 @@ def main():
             api.add_User_Data(api,login,location,weather,yelp,currency)
         if menuChoice == '2' :
           api = API
-          login = login[1]
+          login = login_name
           api.view_User_Data(api, login)
         if menuChoice == '3' :
             print("Thanks for using the program! ")
             break
         else :
-            print("Invaild menu choice. Please enter a Number.")
+            print("Please enter a Number.")
             
 
 

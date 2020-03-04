@@ -53,8 +53,7 @@ def isCity(country):
         # Use len to find if city exists
         for city in city_list:
             code = list(city.keys())[0]
-            county_code = (city[code]['countrycode']) # THIS WORKS!!!!!
-            print(county_code)    
+            county_code = (city[code]['countrycode']) # THIS WORKS!!!!! 
             city = (city[code]['name']) # THIS WORKS!!!!!
             location = Location(country, city, county_code)
             return (location)
@@ -78,4 +77,3 @@ def isCountry():
                 return country
         else :
             country = input('Please enter a country name ')
-isCity("Spain")
