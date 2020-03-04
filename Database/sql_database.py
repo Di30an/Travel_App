@@ -17,7 +17,7 @@ class API:
         with sqlite3.connect(db) as conn:
 
             conn.execute(insert_sql, (User, weather, yelp ,currency, date )  )
-            print("Success")
+            #print("Success") commented out for clean look
         conn.close()
     def view_User_Data(self,User_Email):
         conn = sqlite3.connect(db) 
@@ -39,9 +39,9 @@ class API:
 
             # Checking if there are any Artwork and returning the proper values.
             if len (all_rows) == 0 :
-                print(f'{User_Email} has no profile here.')
+                print(f'| {User_Email} has no profile here.')
             else:
-                print("Profile exists")
+                #print("| Profile exists")
                 return True, User_Email
     
     def create_User(self, User_Email, User_Password):
@@ -53,9 +53,9 @@ class API:
             c.execute (insert_check_sql, (User_Email,))
             all_rows = c.fetchall()
             if len (all_rows) > 0:
-                print(f'{User_Email} is already in the User database. Account not created. ')
+                print(f'| {User_Email} is already in the User database. Account not created. ')
             else : 
                 conn.execute(insert_sql, (User_Email, User_Password))
-                print(f"Added{User_Email} ")
+                print(f"| Added {User_Email}!")
                 return True
         conn.close()

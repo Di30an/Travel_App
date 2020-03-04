@@ -24,23 +24,22 @@ def main():
             api = API
             login = login_name
             location = get_country_and_city()
-
             yelp = str(Yelp_API(location))
             weather = str(Weather_API(location))
             currency = str(Currency_API(location))
-
-            print(yelp,weather,currency)
- 
+            print (weather,currency,yelp)
             api.add_User_Data(api,login,location,weather,yelp,currency)
         if menuChoice == '2' :
           api = API
           login = login_name
           api.view_User_Data(api, login)
         if menuChoice == '3' :
-            print("Thanks for using the program! ")
+            print("|-----------------------------------------------------------------|")
+            print("| Thanks for using the program!\t\t\t\t\t  |")
+            print("|-----------------------------------------------------------------|")
             break
         else :
-            print("Please enter a Number.")
+            print("| Invaild menu choice. Please enter a Number.\t\t\t  |")
             
 
 
