@@ -7,7 +7,6 @@ from Objects.Weather_Obj import Weather
 
 def Weather_API(location):
 
-    key = '816269080b4ebe6ca23ad4449565af85'
     query = {'q' : location.city , 'units' : 'imperial' , 'appid' : key }
     # Url header for api. 
     url = 'http://api.openweathermap.org/data/2.5/weather'

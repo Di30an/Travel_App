@@ -7,7 +7,6 @@ from Objects.Yelp_Obj import Yelp
 
 def Yelp_API(location):
     # Define the API Key and define the Endpoint and define the Header
-    api_key ='ElcFaBRSEjtgHhOeSriUTtk4-jzvJSwZy3DuGPcItCdvb7CPGIX6mAskxI5jWVL6eldFiZfnydTNzf3PDE5wGGgAsdvalWNIjszg5zAKwgvRjnu_5yaIRa7A8tpaXnYx'
     ENDPOINT = 'https://api.yelp.com/v3/businesses/search'
     HEADERS = {'Authorization' : 'Bearer %s' %  api_key}
 
