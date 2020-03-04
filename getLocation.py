@@ -19,7 +19,7 @@ def get_connection_status():
         data = data.json()
         return data
     elif data.status_code == 404:
-        return 'connection not established!'
+        return '| Connection not established!'
 
 #def get_country_and_city():
     
@@ -60,7 +60,7 @@ def isCity(country):
             return (location)
             
         else:
-            city = input('Please enter a city name. ')
+            city = input('| Please enter a city name: ')
 
 def isCountry():
     # Confirms a countries existance. 
@@ -77,5 +77,5 @@ def isCountry():
             if countries == country :
                 return country
         else :
-            country = input('Please enter a country name ')
-isCity("Spain")
+            country = input('| Please enter a country name: ')
+#isCity("Spain")

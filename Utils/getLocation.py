@@ -25,9 +25,8 @@ def get_connection_status():
 #def get_country_and_city():
     
     data = get_connection_status()
-    country = input('| Enter country: ')
-    city = input('| Enter city of choice: ')
-    print('|-----------------------------------------------------------------|')
+    country = input('Enter country: ')
+    city = input('Enter city of choice: ')
     for i in range(len(data)): 
         value = data[i]['Name']
         if value.lower() == country.lower():
