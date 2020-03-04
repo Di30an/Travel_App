@@ -3,9 +3,13 @@ Login is the first window. From there we move to the main menu that allows the u
 """
 from Database.sql_database import API
 
-        
+def menu():
+        print('|-----------------------------------------------------------------|')
+        print('| Welcome to Travel App!                                          |\n| If this is your first time you will be asked for your name.     |\n| Then you will enter the country and city that you\'re visiting.  |\n| You will get the local weather, current USD value, &            |\n| the five closest resturants from Yelp with their ratings        |')
+        print('|-----------------------------------------------------------------|\n|\t\t\t\t\t\t\t\t  |') 
 
 def user_login_menu():
+    menu()
     while True:
         print('User Login \n'
         '1 : Login \n'

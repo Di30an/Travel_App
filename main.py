@@ -9,6 +9,7 @@ from Database import *
 from getLocation import *
 
 def main():
+
     login = user_login_menu()
     login_name = login[1]
     login_bool = login[0]
@@ -27,6 +28,8 @@ def main():
             yelp = str(Yelp_API(location))
             weather = str(Weather_API(location))
             currency = str(Currency_API(location))
+
+            print(yelp,weather,currency)
  
             api.add_User_Data(api,login,location,weather,yelp,currency)
         if menuChoice == '2' :
@@ -42,4 +45,9 @@ def main():
 
 
 main()
+
+
+
+
+
 
