@@ -5,9 +5,8 @@ import os
 
 import geonamescache
 from Objects.Weather_Obj import Weather
-from Objects.Location_Obj import *
+from Objects.Location_Obj import Location
 
-## Had Issues getting the module 'Objects' to run correctly. Had to move it to the main directory 
 ''' 
 function to get country extension code. 
 consume API with list of countries and corresponding codes
@@ -39,8 +38,10 @@ def get_connection_status():
 
 def get_country_and_city():
     country = isCountry()    
+    city = isCity(country)
+    return city
 
-def isCity(country_name, county_code):
+def isCity(country):
     city = ""
     while True:  
         # Creates a geonamescache object
@@ -49,25 +50,21 @@ def isCity(country_name, county_code):
         city = city.capitalize()
         # Searches geocache libary for city name, returns a dictonary
         city_list = gc.get_cities_by_name('%s' % city) 
-        print(len(city_list))
         # Use len to find if city exists
         for city in city_list:
-            print(city)
             code = list(city.keys())[0]
             county_code = (city[code]['countrycode']) # THIS WORKS!!!!!
 
             city = (city[code]['name']) # THIS WORKS!!!!!
-            country = ""
-            print(code)
             location = Location(country, city, county_code)
-            print(location)
+            return (location)
             
         else:
             city = input('Please enter a city name. ')
 
 def isCountry():
-    country = ""
     # Confirms a countries existance. 
+    country = ""
     while True:
         # Creates a geonamescache object
         gc = geonamescache.GeonamesCache()
@@ -76,10 +73,8 @@ def isCountry():
         # Searches geocache libary for country, returns a dictonary
         country_list = gc.get_countries_by_names()
         # If country name is found then it returns a country name. 
-        print (country_list)
         for countries in country_list.keys():
-
-                print (countries)
+            if countries == country :
                 return country
         else :
             country = input('Please enter a country name ')
