@@ -27,8 +27,11 @@ def Yelp_API(location):
     # Returns the name rating and the zip code for the 5 closest resturants
 
     yelp_data = []
+    count = 1 #formatting resturant count, CR
     for biz in business_data['businesses']:
-        biz_data = (biz['name'], biz ['rating'], biz['location']['country'])
+        countStr = str(count) #convert biz count, CR
+        biz_data = (countStr, biz['name'], biz ['rating'], biz['location']['country'])
         yelp_data.append(biz_data)
+        count += 1
     yelp_data = Yelp (location.country, location.city , yelp_data)
     return yelp_data
